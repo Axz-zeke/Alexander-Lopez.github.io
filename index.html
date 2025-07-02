@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexander S. Lopez - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#0a0a0a',
+                        'dark-card': '#1a1a1a',
+                        'accent': '#00d4ff',
+                        'accent-dark': '#0099cc',
+                        'text-primary': '#ffffff',
+                        'text-secondary': '#a0a0a0'
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'float': 'float 3s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(0, 212, 255, 0.5)' },
+                            '100%': { boxShadow: '0 0 30px rgba(0, 212, 255, 0.8)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Minimal custom CSS for performance */
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(26, 26, 26, 0.8);
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        }
+        html { scroll-behavior: smooth; }
+        .hero-bg {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-text-primary min-h-screen">
+    <header class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-transparent via-accent/5 to-transparent"></div>
+        <div class="container mx-auto px-4 text-center relative z-10 animate-fade-in">
+            <div class="w-40 h-40 mx-auto mb-8 rounded-full bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center text-dark-bg font-bold text-lg animate-float border-4 border-accent/50">
+                <img src="picture.jpg" alt="Alexander Lopez" class="w-full h-full object-cover rounded-full">
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 text-glow animate-slide-up">
+                Alexander S. Lopez
+            </h1>
+            <p class="text-xl md:text-2xl text-text-secondary mb-6 animate-slide-up" style="animation-delay: 0.2s">
+                Front-End Developer & UI/UX Designer
+            </p>
+            <p class="text-lg text-accent mb-8 animate-slide-up" style="animation-delay: 0.4s">
+                Design with purpose, build with precision
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-6 mb-8 animate-slide-up" style="animation-delay: 0.6s">
+                <div class="flex items-center gap-2 bg-dark-card/50 px-4 py-2 rounded-lg">
+                    <span class="text-accent">📱</span>
+                    <span>+63 910-1741-416</span>
+                </div>
+                <div class="flex items-center gap-2 bg-dark-card/50 px-4 py-2 rounded-lg">
+                    <span class="text-accent">📧</span>
+                    <span class="text-sm">alexandersanalilalopez05@gmail.com</span>
+                </div>
+                <div class="flex items-center gap-2 bg-dark-card/50 px-4 py-2 rounded-lg">
+                    <span class="text-accent">📍</span>
+                    <span>Mabalacat City, Pampanga</span>
+                </div>
+            </div>
+            
+            <a href="#about" class="inline-block bg-accent hover:bg-accent-dark text-dark-bg font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 animate-glow">
+                Explore My Work
+            </a>
+        </div>
+        
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div class="w-6 h-10 border-2 border-accent rounded-full flex justify-center">
+                <div class="w-1 h-3 bg-accent rounded-full mt-2 animate-pulse"></div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="fixed top-0 w-full z-50 glass-effect border-b border-accent/20" id="navbar">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center py-4">
+                <div class="flex space-x-8 bg-dark-card/30 px-6 py-2 rounded-full">
+                    <a href="#about" class="text-text-secondary hover:text-accent transition-colors duration-300 font-medium">About</a>
+                    <a href="#skills" class="text-text-secondary hover:text-accent transition-colors duration-300 font-medium">Skills</a>
+                    <a href="#experience" class="text-text-secondary hover:text-accent transition-colors duration-300 font-medium">Experience</a>
+                    <a href="#projects" class="text-text-secondary hover:text-accent transition-colors duration-300 font-medium">Projects</a>
+                    <a href="#contact" class="text-text-secondary hover:text-accent transition-colors duration-300 font-medium">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="about" class="py-20 bg-dark-bg">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold mb-12 text-center text-glow">About Me</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <p class="text-lg text-text-secondary leading-relaxed">
+                            A dedicated <span class="text-accent font-semibold">Information Technology professional</span> with expertise in Front-End development, UI/UX design, and Network administration.
+                        </p>
+                        <p class="text-lg text-text-secondary leading-relaxed">
+                            A recent <span class="text-accent font-semibold">Cum Laude</span> graduate in Bachelor of Science in Information Technology from System Plus College Foundation.
+                        </p>
+                        <p class="text-lg text-text-secondary leading-relaxed">
+                            I design <span class="text-accent font-semibold">bold digital experiences</span> that fuse intuitive UI with smart, user-driven innovation.
+                        </p>
+                    </div>
+                    <div class="bg-dark-card p-8 rounded-2xl border border-accent/20">
+                        <h3 class="text-2xl font-bold mb-6 text-accent">Quick Stats</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center border-b border-accent/10 pb-2">
+                                <span class="text-text-secondary">Education</span>
+                                <span class="text-accent font-semibold">Cum Laude</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-accent/10 pb-2">
+                                <span class="text-text-secondary">Certifications</span>
+                                <span class="text-accent font-semibold">6+ Professional</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-accent/10 pb-2">
+                                <span class="text-text-secondary">Experience</span>
+                                <span class="text-accent font-semibold">Front-End Dev / IT Desktop Engineer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 bg-gradient-to-b from-dark-bg to-dark-card/20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center text-glow">Technical Arsenal</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-dark-card p-6 rounded-2xl border border-accent/20 card-hover transition-all duration-300">
+                    <div class="text-accent text-3xl mb-4">⚡</div>
+                    <h3 class="text-xl font-bold mb-4 text-accent">Web Development</h3>
+                    <div class="space-y-2">
+                        <span class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">HTML5</span>
+                        <span class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">CSS3</span>
+                        <span class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">JavaScript</span>
+                        <span class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">React.js</span>
+                        <span class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Django</span>
+                        <span class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                    </div>
+                </div>
+                
+                <div class="bg-dark-card p-6 rounded-2xl border border-accent/20 card-hover transition-all duration-300">
+                    <div class="text-accent text-3xl mb-4">🛡️</div>
+                    <h3 class="text-xl font-bold mb-4 text-accent">System Admin</h3>
+                    <div class="space-y-2">
+                        <span class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Linux</span>
+                        <span class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Docker</span>
+                        <span class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">AWS</span>
+                        <span class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Networking</span>
+                        <span class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">VPN Config</span>
+                    </div>
+                </div>
+                
+                <div class="bg-dark-card p-6 rounded-2xl border border-accent/20 card-hover transition-all duration-300">
+                    <div class="text-accent text-3xl mb-4">🎨</div>
+                    <h3 class="text-xl font-bold mb-4 text-accent">Design</h3>
+                    <div class="space-y-2">
+                        <span class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">UI/UX</span>
+                        <span class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Figma</span>
+                        <span class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Canva</span>
+                        <span class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Graphic Design</span>
+                    </div>
+                </div>
+                
+                <div class="bg-dark-card p-6 rounded-2xl border border-accent/20 card-hover transition-all duration-300">
+                    <div class="text-accent text-3xl mb-4">🔧</div>
+                    <h3 class="text-xl font-bold mb-4 text-accent">Dev Tools</h3>
+                    <div class="space-y-2">
+                        <span class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">VS Code</span>
+                        <span class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">GitHub</span>
+                        <span class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">VB.NET</span>
+                        <span class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Python</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 bg-dark-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center text-glow">Professional Journey</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-accent"></div>
+                    
+                    <div class="relative flex items-center mb-8">
+                        <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-dark-bg"></div>
+                        <div class="ml-12 md:ml-0 md:w-1/2 md:pr-8 md:text-right">
+                             <div class="bg-dark-card p-6 rounded-2xl border border-accent/20 card-hover transition-all duration-300">
+                                <h3 class="text-xl font-bold text-accent mb-2">PermitEase - Thesis Project</h3>
+                                <p class="text-text-secondary mb-2">Cloud-based school permit automation system</p>
+                                <p class="text-sm text-accent mb-4">January 2024 - May 2025</p>
+                                <ul class="text-text-secondary space-y-2">
+                                    <li>Streamlined permit processing using Django, PostgreSQL, and modern web technologies.</li>
+                                    <li>Designed and implemented the full-stack architecture.</li>
+                                    <li>Developed intuitive user interfaces for students, faculty, and administrators.</li>
+                                </ul>
+                                <div class="flex flex-wrap gap-2 mt-4">
+                                    <span class="bg-accent/10 text-accent px-2 py-1 rounded text-xs">Django</span>
+                                    <span class="bg-accent/10 text-accent px-2 py-1 rounded text-xs">PostgreSQL</span>
+                                    <span class="bg-accent/10 text-accent px-2 py-1 rounded text-xs">Bootstrap</span>
+                                </div>
+                                <a href="http://52.65.179.43:8000" target="_blank" class="inline-block bg-accent text-dark-bg px-4 py-2 rounded-lg font-semibold hover:bg-accent-dark transition-colors mt-4">
+                                    View Project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative flex items-center mb-8 justify-end">
+                        <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-dark-bg"></div>
+                        <div class="md:w-1/2 md:pl-8 ml-12">
+                            <div class="bg-dark-card p-6 rounded-2xl border border-accent/20 card-hover transition-all duration-300">
+                                <h3 class="text-xl font-bold text-accent mb-2">Intern - IT Desktop Engineer</h3>
+                                <p class="text-text-secondary mb-2">VXI Global Holdings B.V</p>
+                                <p class="text-sm text-accent mb-4">September 2024 - January 2025</p>
+                                <ul class="text-text-secondary space-y-2">
+                                    <li>Provided technical support to end-users, resolving hardware and software issues.</li>
+                                    <li>Performed system maintenance and ensured optimal performance of IT infrastructure.</li>
+                                    <li>Assisted in network configuration and troubleshooting to maintain seamless connectivity.</li>
+                                    <li>Managed IT inventory and documented support procedures.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-gradient-to-b from-dark-bg to-dark-card/20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center text-glow">UI/UX Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-dark-card rounded-2xl overflow-hidden border border-accent/20 card-hover transition-all duration-300">
+                    <div class="bg-gradient-to-br from-accent/20 to-accent-dark/20 p-6">
+                        <h3 class="text-2xl font-bold text-accent mb-2">Web-based-ordering-and-queue-management-system</h3>
+                        <p class="text-text-secondary">Sample UI of Coffee Shop web-based-ordering-and-queue-management-system</p>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-text-secondary mb-4">Designed an intuitive UI for a coffee shop's ordering and queue management system using Figma.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-accent/10 text-accent px-2 py-1 rounded text-xs">Figma</span>
+                            <span class="bg-accent/10 text-accent px-2 py-1 rounded text-xs">UI/UX</span>
+                        </div>
+                        <a href="https://www.figma.com/design/ZZsdtN1TfDDlZ7l6eBmtU9/web-based-ordering-and-queue-management-system?node-id=0-1&t=gEf4KFf3lEcqhWGm-1" target="_blank" class="inline-block bg-accent text-dark-bg px-4 py-2 rounded-lg font-semibold hover:bg-accent-dark transition-colors">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-dark-card rounded-2xl overflow-hidden border border-accent/20 card-hover transition-all duration-300">
+                    <div class="bg-gradient-to-br from-accent/20 to-accent-dark/20 p-6">
+                        <h3 class="text-2xl font-bold text-accent mb-2">Plate Pulse - Mobile Application</h3>
+                        <p class="text-text-secondary">UI for Plate Pulse mobile application</p>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-text-secondary mb-4">Created the user interface for the Plate Pulse mobile application using Canva.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-accent/10 text-accent px-2 py-1 rounded text-xs">Canva</span>
+                            <span class="bg-accent/10 text-accent px-2 py-1 rounded text-xs">UI/UX</span>
+                        </div>
+                        <a href="https://www.canva.com/design/DAGr8mO4KnI/TlyNU37eFCs-XUJbA0JUdA/edit?utm_content=DAGr8mO4KnI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="inline-block bg-accent text-dark-bg px-4 py-2 rounded-lg font-semibold hover:bg-accent-dark transition-colors">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-dark-card rounded-2xl overflow-hidden border border-accent/20 card-hover transition-all duration-300">
+                    <div class="bg-gradient-to-br from-accent/20 to-accent-dark/20 p-6">
+                        <h3 class="text-2xl font-bold text-accent mb-2">SPCF UniVerse Mobile Application</h3>
+                        <p class="text-text-secondary">Exclusive SPCF mobile application</p>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-text-secondary mb-4">Developed the UI/UX design for the SPCF UniVerse mobile application using Canva.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-accent/10 text-accent px-2 py-1 rounded text-xs">Canva</span>
+                            <span class="bg-accent/10 text-accent px-2 py-1 rounded text-xs">UI/UX</span>
+                        </div>
+                        <a href="https://www.canva.com/design/DAGr8maGjSc/6wCKEgoVix9oZRE2rLA28A/edit?utm_content=DAGr8maGjSc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="inline-block bg-accent text-dark-bg px-4 py-2 rounded-lg font-semibold hover:bg-accent-dark transition-colors">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-dark-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center text-glow">Certifications</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-dark-card p-4 rounded-xl border border-accent/20 text-center">
+                    <h4 class="font-bold text-accent mb-2">Python Certification</h4>
+                    <p class="text-text-secondary text-sm">IT Specialist - 2022</p>
+                </div>
+                <div class="bg-dark-card p-4 rounded-xl border border-accent/20 text-center">
+                    <h4 class="font-bold text-accent mb-2">CCNA Essentials</h4>
+                    <p class="text-text-secondary text-sm">Cisco - 2024</p>
+                </div>
+                <div class="bg-dark-card p-4 rounded-xl border border-accent/20 text-center">
+                    <h4 class="font-bold text-accent mb-2">CyberOps Associate</h4>
+                    <p class="text-text-secondary text-sm">Cisco - 2024</p>
+                </div>
+                <div class="bg-dark-card p-4 rounded-xl border border-accent/20 text-center">
+                    <h4 class="font-bold text-accent mb-2">Linux Essential</h4>
+                    <p class="text-text-secondary text-sm">NDG - 2023</p>
+                </div>
+                <div class="bg-dark-card p-4 rounded-xl border border-accent/20 text-center">
+                    <h4 class="font-bold text-accent mb-2">Networking</h4>
+                    <p class="text-text-secondary text-sm">IT Specialist - 2023</p>
+                </div>
+                <div class="bg-dark-card p-4 rounded-xl border border-accent/20 text-center">
+                    <h4 class="font-bold text-accent mb-2">Cybersecurity</h4>
+                    <p class="text-text-secondary text-sm">Cisco - 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gradient-to-b from-dark-bg to-dark-card/20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8 text-glow">Let's Build Something Great</h2>
+            <p class="text-xl text-text-secondary mb-12 max-w-2xl mx-auto">
+                Ready to discuss your next project? I'm always interested in innovative opportunities and challenging problems.
+            </p>
+            <div class="flex flex-wrap justify-center gap-8">
+                <a href="tel:+639101741416" class="bg-accent hover:bg-accent-dark text-dark-bg font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
+                    📱 Call Me
+                </a>
+                <a href="mailto:alexandersanalilalopez05@gmail.com" class="bg-dark-card hover:bg-accent hover:text-dark-bg text-accent font-bold py-4 px-8 rounded-lg border border-accent transition-all duration-300 transform hover:scale-105">
+                    📧 Email Me
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark-card/50 py-8 text-center border-t border-accent/20">
+        <p class="text-text-secondary">&copy; 2025 Alexander S. Lopez. Built with precision and passion.</p>
+    </footer>
+
+    <script>
+        // Minimal JavaScript for performance
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar scroll effect
+        let lastScrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(26, 26, 26, 0.95)';
+            } else {
+                navbar.style.background = 'rgba(26, 26, 26, 0.8)';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0s';
+                    entry.target.classList.add('animate-slide-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
